@@ -44,7 +44,7 @@
         return {
           w: w+"px",
           h: h+"px",
-          cw: (dimensionPct*w)+"px",
+          cw: (dimensionPct*w) + "px",
           ch: (dimensionPct*h)+"px"
         };
       };

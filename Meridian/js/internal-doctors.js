@@ -1,14 +1,45 @@
-
 $(document).ready(function() {
-	$('.popup-youtube').magnificPopup({
-		disableOn: 700,
-		type: 'iframe',
-		mainClass: 'mfp-fade',
-		removalDelay: 160,
-		preloader: false,
-
-		fixedContentPos: false
-	});
+  $('.doctors-certificates__slider-inner').slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    adaptiveHeight: false,
+    nextArrow: `<div class="doctors-certificates__slider-arrow-box doctors-certificates__slider-arrow-box-next"><button type="button" class="doctors-certificates__slider-arrow doctors-certificates__slider-arrow-next"></button></div>`,
+    prevArrow: `<div class="doctors-certificates__slider-arrow-box doctors-certificates__slider-arrow-box-prev"><button type="button" class="doctors-certificates__slider-arrow doctors-certificates__slider-arrow-prev"></button></div>`,
+    responsive: [
+        {
+          breakpoint: 1400,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1
+          }
+        },
+        {
+          breakpoint: 1010,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        },
+        {
+            breakpoint: 650,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              centerMode: true,
+              arrows: false,
+            }
+        },
+        {
+            breakpoint: 500,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              centerMode: false,
+              arrows: false,
+            }
+        },
+      ]
+  });
   $('.team__slider-list').slick({
     slidesToShow: 4,
     slidesToScroll: 1,
@@ -98,42 +129,34 @@ $(document).ready(function() {
         // }
       ]
   });
-  $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
-		disableOn: 700,
-		type: 'iframe',
-		mainClass: 'mfp-fade',
-		removalDelay: 160,
-		preloader: false,
 
-		fixedContentPos: false
-	});
   $(function(){   
       $(".twentytwenty-container[data-orientation!='vertical']").twentytwenty();
   });
-  $('.licenses__link').magnificPopup({
-		type: 'image',
-		closeOnContentClick: true,
-		mainClass: 'mfp-img-mobile',
-		image: {
-			verticalFit: true
-		}
-	});
-	$('.make-an-appointment-popup-link').magnificPopup({
+  $('.doctors-certificates__link').magnificPopup({
+    type: 'image',
+    closeOnContentClick: true,
+    mainClass: 'mfp-img-mobile',
+    image: {
+      verticalFit: true
+    }
+  });
+  $("#phone").mask("+9-(999)-999-99-99");
+  $('.make-an-appointment-popup-link').magnificPopup({
 		type: 'inline',
 		preloader: false,
 		focus: '#tel',
 	});
-  $("#phone").mask("+9-(999)-999-99-99");
   $("#make-an-appointment-popup-tel").mask("+9-(999)-999-99-99");
-});
-
-
+})
 var config = {
     load: {
       filter: '.category-b'
   }
 };
+
 let mixer = mixitup('.works__list', config);
+
 
 const headerBurgerBtn = document.querySelector('.header-burger')
 const headerMenuBtn = document.querySelector('.header-menu__close')
@@ -158,4 +181,3 @@ for(let i = 0; i < dropdownLinks.length; i++){
     dropdownConatiner.classList.toggle("active")
   })
 }
-

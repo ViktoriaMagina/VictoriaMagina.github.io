@@ -1,14 +1,4 @@
-
 $(document).ready(function() {
-	$('.popup-youtube').magnificPopup({
-		disableOn: 700,
-		type: 'iframe',
-		mainClass: 'mfp-fade',
-		removalDelay: 160,
-		preloader: false,
-
-		fixedContentPos: false
-	});
   $('.team__slider-list').slick({
     slidesToShow: 4,
     slidesToScroll: 1,
@@ -98,34 +88,17 @@ $(document).ready(function() {
         // }
       ]
   });
-  $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
-		disableOn: 700,
-		type: 'iframe',
-		mainClass: 'mfp-fade',
-		removalDelay: 160,
-		preloader: false,
-
-		fixedContentPos: false
-	});
-  $(function(){   
-      $(".twentytwenty-container[data-orientation!='vertical']").twentytwenty();
-  });
-  $('.licenses__link').magnificPopup({
-		type: 'image',
-		closeOnContentClick: true,
-		mainClass: 'mfp-img-mobile',
-		image: {
-			verticalFit: true
-		}
-	});
-	$('.make-an-appointment-popup-link').magnificPopup({
+  $("#phone").mask("+9-(999)-999-99-99");
+  $('.make-an-appointment-popup-link').magnificPopup({
 		type: 'inline',
 		preloader: false,
 		focus: '#tel',
 	});
-  $("#phone").mask("+9-(999)-999-99-99");
   $("#make-an-appointment-popup-tel").mask("+9-(999)-999-99-99");
-});
+  $(function(){   
+    $(".twentytwenty-container[data-orientation!='vertical']").twentytwenty();
+  });
+})
 
 
 var config = {
@@ -158,4 +131,3 @@ for(let i = 0; i < dropdownLinks.length; i++){
     dropdownConatiner.classList.toggle("active")
   })
 }
-

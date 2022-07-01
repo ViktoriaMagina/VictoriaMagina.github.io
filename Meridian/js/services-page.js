@@ -1,14 +1,11 @@
-
 $(document).ready(function() {
-	$('.popup-youtube').magnificPopup({
-		disableOn: 700,
-		type: 'iframe',
-		mainClass: 'mfp-fade',
-		removalDelay: 160,
+  $("#phone").mask("+9-(999)-999-99-99");
+  $('.make-an-appointment-popup-link').magnificPopup({
+		type: 'inline',
 		preloader: false,
-
-		fixedContentPos: false
+		focus: '#tel',
 	});
+  $("#make-an-appointment-popup-tel").mask("+9-(999)-999-99-99");
   $('.team__slider-list').slick({
     slidesToShow: 4,
     slidesToScroll: 1,
@@ -47,6 +44,23 @@ $(document).ready(function() {
               arrows: false,
             }
         },
+      ]
+  });
+  $('.treatment__slider-inner ').slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    adaptiveHeight: false,
+    nextArrow: `<div class="treatment__slider-arrow-box treatment__slider-arrow-box-next"><button type="button" class="treatment__slider-arrow treatment__slider-arrow-next"></button></div>`,
+    prevArrow: `<div class="treatment__slider-arrow-box treatment__slider-arrow-box-prev"><button type="button" class="treatment__slider-arrow treatment__slider-arrow-prev"></button></div>`,
+    responsive: [
+        {
+          breakpoint: 900,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+          }
+        }
       ]
   });
   $('.works-slider__inner ').slick({
@@ -98,19 +112,7 @@ $(document).ready(function() {
         // }
       ]
   });
-  $('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
-		disableOn: 700,
-		type: 'iframe',
-		mainClass: 'mfp-fade',
-		removalDelay: 160,
-		preloader: false,
-
-		fixedContentPos: false
-	});
-  $(function(){   
-      $(".twentytwenty-container[data-orientation!='vertical']").twentytwenty();
-  });
-  $('.licenses__link').magnificPopup({
+  $('.kids__link').magnificPopup({
 		type: 'image',
 		closeOnContentClick: true,
 		mainClass: 'mfp-img-mobile',
@@ -118,16 +120,10 @@ $(document).ready(function() {
 			verticalFit: true
 		}
 	});
-	$('.make-an-appointment-popup-link').magnificPopup({
-		type: 'inline',
-		preloader: false,
-		focus: '#tel',
-	});
-  $("#phone").mask("+9-(999)-999-99-99");
-  $("#make-an-appointment-popup-tel").mask("+9-(999)-999-99-99");
-});
-
-
+  $(function(){   
+      $(".twentytwenty-container[data-orientation!='vertical']").twentytwenty();
+  });
+})
 var config = {
     load: {
       filter: '.category-b'
@@ -158,4 +154,3 @@ for(let i = 0; i < dropdownLinks.length; i++){
     dropdownConatiner.classList.toggle("active")
   })
 }
-
