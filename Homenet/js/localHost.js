@@ -1,0 +1,1 @@
+(()=>{var t,e=document.querySelectorAll(".data-link");e.length>0&&e.forEach((function(e){e.addEventListener("click",(function(){t=e.getAttribute("data-item"),localStorage.setItem("keyApplication",t)}))}))})();
